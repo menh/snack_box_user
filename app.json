@@ -1,0 +1,36 @@
+{
+  "pages":[
+    "pages/hello/hello",
+    "pages/shop/home/home",
+    "pages/shop/applyRestocking/applyRestocking",
+    "pages/shop/applySuccess/applySuccess",
+    "pages/bill/home/home"
+  ],
+  "window":{
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#267BD9",
+    "navigationBarTitleText": "宅宅快乐盒",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#808080",
+    "selectedColor": "#267BD9",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "iconPath": "image/icon/shop2.png",
+        "selectedIconPath": "image/icon/shop.png",
+        "pagePath": "pages/shop/home/home",
+        "text": "商城"
+      },
+      {
+        "iconPath": "image/icon/bill2.png",
+        "selectedIconPath": "image/icon/bill.png",
+        "pagePath": "pages/bill/home/home",
+        "text": "订单"
+      }
+    ]
+  }
+}
