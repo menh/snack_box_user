@@ -1,46 +1,54 @@
-//app.js
 App({
-  onLaunch: function () {
-    // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    })
-    // 获取用户信息
-    wx.getSetting({
-      success: res => {
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-          wx.getUserInfo({
-            success: res => {
-              // 可以将 res 发送给后台解码出 unionId
-              this.globalData.userInfo = res.userInfo
-
-              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-              // 所以此处加入 callback 以防止这种情况
-              if (this.userInfoReadyCallback) {
-                this.userInfoReadyCallback(res)
-              }
-            }
-          })
+  onLaunch: function() {
+    var self = this;
+    //获取本地openid
+    self.globalData.openid = wx.getStorageSync('openid');
+    if (self.globalData.openid == '' || self.globalData.openid == null || self.globalData.openid == undefined) {
+      // 登录
+      wx.login({
+        success: res => {
+          // 发送 res.code 到后台换取 openId, sessionKey, unionId
+          self.getOpenid(res.code, self.globalData.appid, self.globalData.secret);
         }
+      })
+    }else{
+      console.log('openid:', self.globalData.openid)
+    }
+  },
+
+
+  getOpenid: function (code, appid, secret) {
+    const self = this;
+    wx.request({
+      url: this.globalData.serverIp + 'getWxOpenId.do',
+      method: 'POST',
+      data: {
+        code: code,
+        appid: appid,
+        secret: secret
+      },
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      success: function (res) {
+        console.log("openId: " + res.data);
+        self.globalData.openid = res.data
+        wx.setStorageSync('openid', res.data)
+      },
+      fail: function (res) {
       }
     })
   },
+
+
   globalData: {
     userInfo: null,
     // serverIp: 'https://www.gzfjcyd.com/snack_box_http/',//正式
-    serverIp: 'https://www.gzfjcyd.com/snack_box_backstage/',//开发
+    serverIp: 'https://www.gzfjcyd.com/snack_box_backstage/', //开发
     appid: 'wx18559bdf27287a41',
     secret: "820c89735e9a6de87e7525811db45dde",
     mchId: "1505544541",
-    boxNum: '',
+    boxId: '',
     openid: '',
   }
 })

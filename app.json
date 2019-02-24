@@ -1,10 +1,10 @@
 {
   "pages":[
-    "pages/hello/hello",
+    "pages/bill/home/home",
     "pages/shop/home/home",
-    "pages/shop/applyRestocking/applyRestocking",
     "pages/shop/applySuccess/applySuccess",
-    "pages/bill/home/home"
+    "pages/shop/applyRestocking/applyRestocking",
+    "pages/hello/hello"
   ],
   "window":{
     "backgroundTextStyle": "dark",

@@ -1,2 +1,14 @@
-<!--pages/shop/applySuccess/applySuccess.wxml-->
-<text>pages/shop/applySuccess/applySuccess.wxml</text>
+<!--pages/showSuccess/showSuccess.wxml-->
+<view class='page'>
+<view style='height:50rpx'></view>
+  <view class='my-title'>提交成功</view>
+<view style='height:50rpx'></view>
+  <image class='my-image' src='/image/picture/apply_restocking_progress.png' mode="widthFix"></image>
+<view style='height:50rpx'></view>
+  <view class='memo'>您的补货申请已提交成功,我们将尽快给您补货！</view>
+<view style='height:5px'></view>
+  <view class='memo'>感谢您的支持！</view>
+<view style='height:50rpx'></view>
+  <view class="submit-view" bindtap='editSubmit'>返回商城</view>
+
+</view>

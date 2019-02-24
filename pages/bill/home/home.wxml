@@ -1,2 +1,23 @@
-<!--pages/bill/home/home.wxml-->
-<text>pages/bill/home/home.wxml</text>
+<view class='page'>
+  <view class='data'>
+    <view class='data-item'>
+      <view class='data-item-num'>
+        <view class='data-item-num-day' style='margin-top:5rpx'>{{box.lastSuppleDateDay}}</view>
+        <view class='data-item-num-time'>{{box.lastSuppleDateTime}}</view>
+      </view>
+      <view class='data-item-title'>补货时间</view>
+    </view>
+    <view class='data-item'>
+      <view class='data-item-num'>{{box.goodsNum}}</view>
+      <view class='data-item-title'>初始件数</view>
+    </view>
+    <view class='data-item'>
+      <view class='data-item-num'>{{box.sellNum}}</view>
+      <view class='data-item-title'>消费件数</view>
+    </view>
+    <view class='data-item'>
+      <view class='data-item-num'>{{box.goodsNum-box.sellNum}}</view>
+      <view class='data-item-title'>应剩件数</view>
+    </view>
+  </view>
+</view>

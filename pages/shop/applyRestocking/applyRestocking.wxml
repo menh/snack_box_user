@@ -1,2 +1,26 @@
-<!--pages/shop/applyRestocking/applyRestocking.wxml-->
-<text>pages/shop/applyRestocking/applyRestocking.wxml</text>
+<view class='page'>
+  <view style='height:20rpx'></view>
+  <view class='memo'>补货时间：隔日补货</view>
+  <view style='height:7rpx'></view>
+  <view class='memo'>周五-周末申请的盒子会统一在周一晚上补</view>
+  <view style='height:10rpx'></view>
+  <view class='edit-input-item'>
+    <view class="edit-input-item-title">
+      <label style='color:red'>*</label> 你的名字</view>
+    <input class="edit-input-item-operation" name="input" placeholder="你的名字" value='{{info.name}}' data-name='name' bindinput="editInputChange"></input>
+  </view>
+  <view class='edit-input-item'>
+    <view class="edit-input-item-title">
+      <label style='color:red'>*</label> 你的手机号码</view>
+    <input class="edit-input-item-operation" name="input" placeholder="你的手机号码" value='{{info.phone}}' data-name='phone' bindinput="editInputChange"></input>
+  </view>
+  <view class='edit-input-item'>
+    <view class="edit-input-item-title">备注</view>
+    <input class="edit-input-item-operation" name="input" placeholder="选填" value='{{info.mark}}' data-name='mark' bindinput="editInputChange"></input>
+  </view>
+
+  <view style='height:50rpx'></view>
+  <view class="submit-view" bindtap='editSubmit'>提交</view>
+  <view style='height:15rpx'></view>
+  <view class='memo'  data-phone='15013149789' bindtap='callMe'>联系客服：15013149789</view>
+</view>

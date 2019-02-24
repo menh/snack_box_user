@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    image:'/image/picture/hello1.png',
+    tapNum:0,
   },
 
   /**
@@ -62,5 +63,17 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  imageTap:function(e){
+    if(this.data.tapNum == 0){
+      this.setData({
+        tapNum:1,
+        image:'/image/picture/hello.png'
+      })
+    }else{
+      wx.switchTab({
+        url: '/pages/shop/home/home',
+      })
+    }
   }
 })

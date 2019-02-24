@@ -1,1 +1,17 @@
-/* pages/shop/applySuccess/applySuccess.wxss */
+.page{
+  background-color: white;
+}
+.my-title{
+  color:rgb(105, 186, 201);
+  font-size: 45rpx;
+  font-weight: bold;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  text-align: center;
+}
+
+.my-image{
+  width: 700rpx;
+  margin-left: 25rpx;
+  margin-right: 25rpx;
+}
