@@ -43,8 +43,9 @@ App({
 
   globalData: {
     userInfo: null,
-    // serverIp: 'https://www.gzfjcyd.com/snack_box_http/',//正式
-    serverIp: 'https://www.gzfjcyd.com/snack_box_backstage/', //开发
+    //serverIp: 'https://www.gzfjcyd.com/snack_box_http/',//正式
+    //serverIp: 'https://www.gzfjcyd.com/snack_box_backstage/', //开发
+    serverIp: 'http://localhost:8080/bubee/',
     appid: 'wx18559bdf27287a41',
     secret: "820c89735e9a6de87e7525811db45dde",
     mchId: "1505544541",
